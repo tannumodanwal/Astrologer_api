@@ -11,7 +11,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 
 public class FileService {    
-	private final String uploadDir = "uploads/";
+    private final String uploadDir = "uploads/";
     public String uploadImage(MultipartFile file) throws IOException {
         String fileName = UUID.randomUUID().toString()+ "_" +file.getOriginalFilename();
         Path filePath = Paths.get(uploadDir + fileName);
