@@ -1,7 +1,6 @@
 package com.api.entities;
 
-
-
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import com.api.enums.CommunicationType;
@@ -15,26 +14,25 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.PositiveOrZero;
 
-
-
 @Entity
-@Table(name = "Orders_details")
+@Table(name = "Orders") 
 public class Order {
-  
-	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
 
-	private int userId;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+
+    @NotNull(message="user field must be valid")
+     private int userId;
 
 	
-	@NotNull(message = "Astrologer cannot be null")
-    private long astrologerId;
+    private int astrologerId;
 
-    @NotNull(message = "Order date cannot be null")
-    private LocalDateTime orderDate; // Order creation date
+    @NotNull(message = "field Birth Date must be valid")
+    private LocalDate orderDate; // Order creation date
 
     private LocalTime startTime; // Call/chat start time
 
@@ -52,11 +50,11 @@ public class Order {
     @NotNull(message = "Communication type cannot be null")
     private CommunicationType communicationType;
 
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -68,19 +66,19 @@ public class Order {
 		this.userId = userId;
 	}
 
-	public long getAstrologerId() {
+	public int getAstrologerId() {
 		return astrologerId;
 	}
 
-	public void setAstrologerId(long astrologerId) {
+	public void setAstrologerId(int astrologerId) {
 		this.astrologerId = astrologerId;
 	}
 
-	public LocalDateTime getOrderDate() {
+	public LocalDate getOrderDate() {
 		return orderDate;
 	}
 
-	public void setOrderDate(LocalDateTime orderDate) {
+	public void setOrderDate(LocalDate orderDate) {
 		this.orderDate = orderDate;
 	}
 
@@ -124,16 +122,9 @@ public class Order {
 		this.communicationType = communicationType;
 	}
 
-	@Override
-	public String toString() {
-		return "Order [id=" + id + ", userId=" + userId + ", astrologerId=" + astrologerId + ", orderDate=" + orderDate
-				+ ", startTime=" + startTime + ", endTime=" + endTime + ", duration=" + duration + ", status=" + status
-				+ ", communicationType=" + communicationType + "]";
-	}
-
-	public Order(Long id, int userId, @NotNull(message = "Astrologer cannot be null") long astrologerId,
-			@NotNull(message = "Order date cannot be null") LocalDateTime orderDate, LocalTime startTime,
-			LocalTime endTime, @PositiveOrZero(message = "Duration must be zero or positive") Long duration,
+	public Order(int id, int userId, @NotNull(message = "Astrologer cannot be null") int astrologerId,
+			@NotNull(message = "Order date cannot be null") LocalDate orderDate, LocalTime startTime, LocalTime endTime,
+			@PositiveOrZero(message = "Duration must be zero or positive") Long duration,
 			@NotNull(message = "Order status cannot be null") OrderStatus status,
 			@NotNull(message = "Communication type cannot be null") CommunicationType communicationType) {
 		super();
@@ -151,6 +142,13 @@ public class Order {
 	public Order() {
 		super();
 		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public String toString() {
+		return "Order [id=" + id + ", userId=" + userId + ", astrologerId=" + astrologerId + ", orderDate=" + orderDate
+				+ ", startTime=" + startTime + ", endTime=" + endTime + ", duration=" + duration + ", status=" + status
+				+ ", communicationType=" + communicationType + "]";
 	}
 
     
