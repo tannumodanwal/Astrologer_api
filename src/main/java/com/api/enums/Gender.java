@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package com.api.enums;
 
 public enum Gender {
@@ -10,3 +11,17 @@ public enum Gender {
 	
 	
 }
+=======
+package com.api.enums;
+
+public enum Gender {
+
+	Male,
+
+	Female,
+
+	Other
+	
+	
+}
+>>>>>>> 6565aec (Updated the file with latest changes)

@@ -5,6 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
+<<<<<<< HEAD
 		<version>3.4.0</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
@@ -13,6 +14,16 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Astrologer_api</name>
 	<description>This is backend apis for Astrologer_app</description>
+=======
+		<version>3.4.2</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.api</groupId>
+	<artifactId>Astrloger_api</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>Astrloger_api</name>
+	<description>astrologer _api project for Spring Boot</description>
+>>>>>>> 6565aec (Updated the file with latest changes)
 	<url/>
 	<licenses>
 		<license/>
@@ -27,7 +38,11 @@
 		<url/>
 	</scm>
 	<properties>
+<<<<<<< HEAD
 		<java.version>17</java.version>
+=======
+		<java.version>21</java.version>
+>>>>>>> 6565aec (Updated the file with latest changes)
 	</properties>
 	<dependencies>
 		<dependency>
@@ -46,6 +61,27 @@
 			<optional>true</optional>
 		</dependency>
 		<dependency>
+<<<<<<< HEAD
+=======
+            <groupId>jakarta.validation</groupId>
+            <artifactId>jakarta.validation-api</artifactId>
+           
+        </dependency>
+
+       <dependency>
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator</artifactId>
+           
+       </dependency>
+    
+     
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-websocket</artifactId>
+</dependency>
+
+		<dependency>
+>>>>>>> 6565aec (Updated the file with latest changes)
 			<groupId>com.mysql</groupId>
 			<artifactId>mysql-connector-j</artifactId>
 			<scope>runtime</scope>
@@ -55,11 +91,16 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+<<<<<<< HEAD
+=======
+		
+>>>>>>> 6565aec (Updated the file with latest changes)
 	</dependencies>
 
 	<build>
 		<plugins>
 			<plugin>
+<<<<<<< HEAD
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
@@ -82,6 +123,10 @@
 						</exclude>
 					</excludes>
 				</configuration>
+=======
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+>>>>>>> 6565aec (Updated the file with latest changes)
 			</plugin>
 		</plugins>
 	</build>

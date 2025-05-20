@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package com.api.enums;
 
 
@@ -10,3 +11,17 @@ public enum OrderStatus{
     CANCELLED
 	
 }
+=======
+package com.api.enums;
+
+
+
+public enum OrderStatus {
+	BOOKED, 
+	IN_PROGRESS,
+	PENDING,
+    COMPLETED,
+    CANCELLED
+	
+}
+>>>>>>> 6565aec (Updated the file with latest changes)
